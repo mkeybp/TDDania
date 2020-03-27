@@ -13,14 +13,13 @@ namespace DaniaTowerDefence
 {
     public class Location
     {
-
-
         public int X;
         public int Y;
         // Nodes
         public int F;
         public int G;
         public int H;
+
         public Location Parent;
 
         public static Location start;

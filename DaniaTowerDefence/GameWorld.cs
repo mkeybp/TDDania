@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DaniaTowerDefence
 {
@@ -30,7 +31,7 @@ namespace DaniaTowerDefence
         public Vector2 position = Vector2.Zero;
         public Texture2D gridTexture;
         private Texture2D studentTex;
-
+        private SpriteFont text;
 
         public GameWorld()
         {
@@ -53,7 +54,7 @@ namespace DaniaTowerDefence
             this.IsMouseVisible = true;
             base.Initialize();
 
-            gr.Pathfinding();
+            //gr.Pathfinding();
 
         }
 
@@ -65,6 +66,7 @@ namespace DaniaTowerDefence
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //gr.Pathfinding();
 
 
             // TODO: use this.Content to load your game content here
@@ -76,7 +78,9 @@ namespace DaniaTowerDefence
             gridTexture = Content.Load<Texture2D>("tile1");
             studentTex = Content.Load<Texture2D>("student");
 
-            Texture2D towerSprite = Content.Load<Texture2D>("Tower_aim");
+            text = Content.Load<SpriteFont>("text");
+
+            Texture2D towerSprite = Content.Load<Texture2D>("mikael_front");
             Texture2D studentSprite = Content.Load<Texture2D>("milo_front");
             Texture2D bulletSprite = Content.Load<Texture2D>("Healing_test");
             gameObjects.Add(tower = new Tower(towerSprite));
@@ -103,7 +107,16 @@ namespace DaniaTowerDefence
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+
+                gr.Pathfinding();
+
+            }
+
 
             // TODO: Add your update logic here
             foreach (GameObject gameObject in gameObjects)
@@ -116,7 +129,7 @@ namespace DaniaTowerDefence
 
                 tower.GetClosestStudent(students);
             }
-            foreach(Student student in students)
+            foreach (Student student in students)
             {
                 student.Update(gameTime);
             }
@@ -132,6 +145,16 @@ namespace DaniaTowerDefence
         {
             GraphicsDevice.Clear(Color.Red);
             spriteBatch.Begin(SpriteSortMode.BackToFront);
+
+            spriteBatch.DrawString(text,
+                                       "Press Space to run the pathfinding",
+                                       new Vector2(700, 400),
+                                       Color.White,
+                                       0,
+                                       Vector2.Zero,
+                                       1,
+                                       SpriteEffects.None,
+                                       1f);
             // TODO: Add your drawing code here
             foreach (GameObject gameObject in gameObjects)
             {
@@ -149,7 +172,7 @@ namespace DaniaTowerDefence
                     if (textureId == 1)
                     {
 
-                      
+
                         spriteBatch.Draw(gridTexture, texturePosition, null, Color.White, 0, Vector2.Zero, 1.0f, SpriteEffects.None, 1f);
                     }
 

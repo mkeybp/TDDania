@@ -27,8 +27,8 @@ namespace DaniaTowerDefence
         public Tower(Texture2D towerSprite)
         {
             radius = 600;
-            this.position.X = 100;
-            this.position.Y = 200;
+            this.position.X = 145;
+            this.position.Y = 185;
             velocity = Vector2.Zero;
             this.sprite = towerSprite;
         }
@@ -42,6 +42,7 @@ namespace DaniaTowerDefence
         {
             this.center = new Vector2(position.X + sprite.Width / 2,
             position.Y + sprite.Height / 2);
+
 
             if (target != null)
             {

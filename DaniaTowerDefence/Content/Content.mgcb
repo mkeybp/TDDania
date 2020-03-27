@@ -73,6 +73,13 @@
 /processorParam:TextureFormat=Color
 /build:Student_test.png
 
+#begin text.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:text.spritefont
+
 #begin tile1.jpg
 /importer:TextureImporter
 /processor:TextureProcessor

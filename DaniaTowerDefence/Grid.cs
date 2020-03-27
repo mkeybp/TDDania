@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -109,18 +110,17 @@ namespace DaniaTowerDefence
         private List<Location> adjacentSquares;
         private static List<Location> proposedLocations;
 
-     
-
+  
 
         public void Pathfinding()
         {
-         
+
             // algorithm
 
             Location current = null;
             // X and Y is cooordinates (ints from the Location class)
-            Location.start = new Location { X = 1, Y = 3 };
-            Location.target = new Location { X = 7, Y =  7 };
+            Location.start = new Location { X = 1, Y = 1 };
+            Location.target = new Location { X = 24, Y = 6 };
             Location.openList = new List<Location>();
             Location.closedList = new List<Location>();
             int g = 0;
@@ -140,8 +140,8 @@ namespace DaniaTowerDefence
                 // show current square on the map
                 currentPosition = new Vector2(current.X, current.Y);
                 // Student
-                Debug.WriteLine(current.X);
-                Debug.WriteLine(current.Y);
+                Debug.WriteLine("X: " + current.X);
+                Debug.WriteLine("Y: " + current.Y);
                 //Console.SetCursorPosition(current.X, current.Y);
                 //System.Threading.Thread.Sleep(1000);
 
@@ -209,7 +209,7 @@ namespace DaniaTowerDefence
                 new Location { X = x + 1, Y = y },
             };
             // Makes the student only walking where there is a 0
-            return proposedLocations.Where(l => map[l.Y, l.X] == 0 || map[l.Y, l.X] == 2).ToList();
+            return proposedLocations.Where(l => map[l.X, l.Y] == 0 || map[l.X, l.Y] == 2).ToList();
         }
 
         static int ComputeHScore(int x, int y, int targetX, int targetY)
@@ -225,7 +225,7 @@ namespace DaniaTowerDefence
 
         public override void Update(GameTime gameTime)
         {
-   
+           
         }
 
 

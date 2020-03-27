@@ -21,10 +21,10 @@ namespace DaniaTowerDefence
         protected bool alive = true;
         public Student(Texture2D studentSprite)
         {
-            this.position.X = 100;
-            this.position.Y = 100;
+            this.position.X = 300;
+            this.position.Y = 300;
 
-            //this.position = grid.currentPosition;
+
 
 
             this.sprite = studentSprite;
@@ -37,8 +37,8 @@ namespace DaniaTowerDefence
         public override void Update(GameTime gameTime)
         {
             Gravity(gameTime);
-            //this.center = new Vector2(position.X + sprite.Width / 2,
-            //position.Y + sprite.Height / 2);
+      
+            Move(gameTime);
         }
         private void Move(GameTime gameTime)
         {
