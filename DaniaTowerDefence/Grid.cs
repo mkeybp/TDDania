@@ -21,31 +21,13 @@ namespace DaniaTowerDefence
         public Vector2 currentPosition;
 
 
-        ////#region Full Grid
-        //public static int[,] grid = new int[11, 9]
-        //       {    
-        //     // D i DANIA
-        //      // Øverst venstre
-        //      {1, 1, 1, 1, 1, 1, 1, 1, 1}, // Nederst venstre
-        //      {0, 0, 0, 0, 0, 0, 0, 0, 1},
-        //      {0, 1, 1, 1, 1, 1, 1, 0, 1},
-        //      {0, 0, 1, 1, 1, 1, 1, 0, 1},
-        //      {1, 0, 0, 1, 1, 1, 1, 0, 1},
-        //      {1, 1, 0, 0, 1, 1, 1, 0, 1},
-        //      {1, 1, 1, 0, 0, 1, 1, 0, 1},
-        //      {1, 1, 1, 1, 0, 0, 1, 0, 1},
-        //      {1, 1, 1, 1, 1, 0, 0, 0, 1},
-        //      {1, 1, 1, 1, 1, 1, 0, 0, 1},
-        //      {1, 1, 1, 1, 1, 1, 1, 0, 1}, // Nederst højre
-        //                                   // Øverst højre
-        //       };
         #region Full Grid
 
         public static int[,] grid = new int[,]
         {    
-             // D i DANIA
-              // Øverst venstre
-              {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, // Nederst venstre
+             // D in DANIA
+              // Top left
+              {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, // Bottom left
               {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
               {0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
               {0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1},
@@ -55,12 +37,12 @@ namespace DaniaTowerDefence
               {1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst højre
-              // Øverst højre
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Bottom right
+              // Top right
 
-              // A i DANIA
-              // Øverst venstre
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst venstre
+              // A in DANIA
+              // Top left
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Bottom left
               {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1},
@@ -70,12 +52,12 @@ namespace DaniaTowerDefence
               {1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1},
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst højre
-              // Øverst højre
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Bottom right
+              // Top right
 
-              // N i DANIA
-              // Øverst venstre
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst venstre
+              // N in DANIA
+              //  Top left
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, //  Bottom left
               {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
@@ -85,12 +67,12 @@ namespace DaniaTowerDefence
               {1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1},
               {1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1},
               {1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1},
-              {1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1}, // Nederst højre
-              // Øverst højre
+              {1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1}, // Bottom right
+              // Top right
 
-               // I i DANIA
-              // Øverst venstre
-              {1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1}, // Nederst venstre
+               // In i DANIA
+              // Top left
+              {1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1}, // Bottom left
               {1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1},
               {1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1},
@@ -100,12 +82,12 @@ namespace DaniaTowerDefence
               {1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1},
               {0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1},
               {1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1},
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst højre
-              // Øverst højre
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Bottom right
+              // Top right
 
                        // A i DANIA
-              // Øverst venstre
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst venstre
+              // Top left
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Bottom left
               {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1},
               {1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1},
@@ -115,8 +97,8 @@ namespace DaniaTowerDefence
               {1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1},
               {1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1},
-              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Nederst højre
-              // Øverst højre
+              {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}, // Bottom right
+              // Top right
 
     };
         #endregion Full Grid
@@ -211,15 +193,9 @@ namespace DaniaTowerDefence
             // assume path was found; let's show it
             while (current != null)
             {
-                //Console.SetCursorPosition(current.X, current.Y);
-                //Console.Write('_');
-               
-
                 current = current.Parent;
-                //System.Threading.Thread.Sleep(1000);
             }
 
-            // end
 
         }
 
@@ -232,8 +208,7 @@ namespace DaniaTowerDefence
                 new Location { X = x - 1, Y = y },
                 new Location { X = x + 1, Y = y },
             };
-            // Makes the student only walking where there is a '1'
-            // Where => gridTexture != 0
+            // Makes the student only walking where there is a 0
             return proposedLocations.Where(l => map[l.Y, l.X] == 0 || map[l.Y, l.X] == 2).ToList();
         }
 
@@ -250,8 +225,7 @@ namespace DaniaTowerDefence
 
         public override void Update(GameTime gameTime)
         {
-            //DrawMap();
-
+   
         }
 
 

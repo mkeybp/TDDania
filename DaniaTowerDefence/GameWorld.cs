@@ -22,7 +22,6 @@ namespace DaniaTowerDefence
 
         SpriteBatch spriteBatch;
         Grid gr = new Grid();
-        Location lo;
 
         public Vector2 studentPos;
 
